@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router';
+import { UserContext } from '../../App';
 import './CheakOut.css';
 
 const CheakOut = () => {
+const [ loggedIn ] = useContext(UserContext);
+//console.log(loggedIn);
+
 const { name } = useParams()
 
 const [foodOrders, setFoodOrders] = useState([]);
@@ -23,7 +27,7 @@ console.log(foodItem);
     return (
         <div className="foodCheak">
            
-            <h2>Hello Sir you have order: <span>{foodItem?.name}</span> <br/> 
+            <h2>Hello <span>{loggedIn?.name}</span> you have order: <span>{foodItem?.name}</span> <br/> 
             your iteam will cost <span>{foodItem?.price}</span>$</h2>
             
             <h1>Thank You Sir for visiting BURGER HOUSE</h1>

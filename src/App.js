@@ -45,6 +45,9 @@ const [loggedIn, setLoggedIn] = useState({});
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/cheakOut">
+          <CheakOut />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
