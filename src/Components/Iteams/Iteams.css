@@ -1,0 +1,17 @@
+.food{
+    color: orange;
+    background-color: gray;
+    width: 180px;
+    height: 200px;
+    border: 1px solid brown;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    line-height: 2px;
+}
+.food img{
+    width: 130px;
+    height: 100px;
+    border-radius: 10px;
+}
