@@ -8,11 +8,12 @@ import {
 import Home from "./Components/Home/Home";
 import Deals from "./Components/Deals/Deals";
 import Admin from "./Components/Admin/Admin";
-import Orders from "./Components/Orders/orders";
+
 import Login from "./Components/Login/Login";
 
 import CheakOut from "./Components/CheakOut/CheakOut";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import OrdersItem from "./Components/OrdersItem/OrdersItem";
 
 export const UserContext = createContext();
 
@@ -39,9 +40,9 @@ const [loggedIn, setLoggedIn] = useState({});
         <PrivateRoute path="/admin">
           <Admin />
         </PrivateRoute>
-        <Route path="/orders">
-          <Orders />
-        </Route>
+        <PrivateRoute path="/orders">
+          <OrdersItem />
+        </PrivateRoute>
         <Route path="/login">
           <Login />
         </Route>

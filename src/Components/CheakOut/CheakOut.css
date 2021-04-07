@@ -4,3 +4,11 @@
 .foodCheak span{
     color: brown;
 }
+.orderProcess{
+    text-decoration: none;
+    border: 1px solid brown;
+    border-radius: 7px;
+    background-color: brown;
+    color: skyblue;
+    padding: 5px 10px;
+}

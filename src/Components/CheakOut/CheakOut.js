@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { UserContext } from '../../App';
+import { Link } from 'react-router-dom';
 import './CheakOut.css';
 
 const CheakOut = () => {
-const [ loggedIn ] = useContext(UserContext);
-//console.log(loggedIn);
+
 
 const { name } = useParams()
 
@@ -24,13 +23,19 @@ console.log(foodItem);
 
 
 
+
     return (
         <div className="foodCheak">
-           
-            <h2>Hello <span>{loggedIn?.name}</span> you have order: <span>{foodItem?.name}</span> <br/> 
-            your iteam will cost <span>{foodItem?.price}</span>$</h2>
+            <h1>Please Checkout your order</h1>
+            <div className="foodName">
+            <h3>Name of food: <span>{foodItem?.name}</span> </h3>
+            <h3>Quantity of food: 1</h3>
+            <h2>Price of Food: <span>{foodItem?.price}$</span> </h2>
+            <Link className="orderProcess" to="/orders">Process Order</Link>
+            </div>
             
-            <h1>Thank You Sir for visiting BURGER HOUSE</h1>
+            
+           
         </div>
     );
 };

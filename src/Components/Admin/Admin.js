@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import './Admin.css';
 
 const Admin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -44,16 +45,21 @@ const Admin = () => {
     }
     return (
         <div>
-           
-    <form onSubmit={handleSubmit(onSubmit)}>
-      
-      <input type="text" placeholder="foodname" {...register("foodname")} />
+           <h1 className="title">Add Foods on Menu </h1>
+    <form className="formSubmit" onSubmit={handleSubmit(onSubmit)}>
+        <fieldset>
+        <input type="text" placeholder="foodname" {...register("foodname")} />
+     <br/>
      <br/>
       <input type="number" placeholder="price" {...register("price")} />
     <br/>
-      <input type="file" onChange={handleImgUplode} />
+    <br/>
+      <input className="fileField" type="file" onChange={handleImgUplode} />
+    <br/>
     <br/>
       <input type="submit" />
+        </fieldset>
+      
     </form>
         </div>
     );
